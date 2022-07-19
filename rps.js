@@ -6,6 +6,7 @@
     const rps=["Rock", "Paper", "Scissors"];
     return rps[getRandomInt()];
 }
+
 let playScore = 0;
 let compScore= 0;
 
@@ -21,13 +22,21 @@ function game () {
 
         playRound(playerSelection, computerSelection);
         
-        console.log(playRound(playerSelection, computerSelection));
-        
         i++
 
         console.log (i)
 
         console.log ("You chose " + playerSelection + ". The computer chose " + computerSelection + ". Your score is " + playScore + ". The computer score is " + compScore + "." )
+
+        if (i==5) { 
+            if (playScore>compScore) {
+                console.log ("YOU WIN!")
+            }
+            else if (playScore==compScore) {
+                console.log ("IT'S A TIE!")
+            }
+            else {console.log ("YOU LOSE!")}
+        }
 
      }
   }
@@ -48,19 +57,25 @@ function playRound(playerSelection, computerSelection) {
     if ((playerSelection==="Rock" && computerSelection==="Scissors") ||
         (playerSelection==="Scissors" && computerSelection==="Paper") ||
         (playerSelection==="Paper" && computerSelection==="Rock") ) {
-            return playScore++;
+            playScore++;
+            console.log ("computer score is " + compScore)
+            console.log ("player score is " + playScore)
             return "Win";
         }
     else if ((playerSelection==="Rock" && computerSelection==="Rock") ||
              (playerSelection==="Scissors" && computerSelection==="Scissors") ||
              (playerSelection==="Paper" && computerSelection==="Paper") ) {
+            console.log ("computer score is " + compScore)
+            console.log ("player score is " + playScore)
             return "Tie";
+
         }
     else if ((playerSelection==="Scissors" && computerSelection==="Rock") ||
     (playerSelection==="Paper" && computerSelection==="Scissors") ||
     (playerSelection==="Rock" && computerSelection==="Paper") ) {
-        compScore++
-        console.log (compScore)
+        compScore++;
+        console.log ("computer score is " + compScore)
+        console.log ("player score is " + playScore)
         return "Lose"
   }
     else { return "There seems to be a problem. Try again."}
