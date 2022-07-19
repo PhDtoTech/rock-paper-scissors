@@ -17,14 +17,10 @@ function game () {
         //These are the variables for player Selection and computer Selection
         let playerSelection = prompt ("Rock, paper, or scissors?" ,);
         let computerSelection = computerPlay();
-        
-        console.log (i)
 
         playRound(playerSelection, computerSelection);
         
         i++
-
-        console.log (i)
 
         console.log ("You chose " + playerSelection + ". The computer chose " + computerSelection + ". Your score is " + playScore + ". The computer score is " + compScore + "." )
 
@@ -58,15 +54,11 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection==="Scissors" && computerSelection==="Paper") ||
         (playerSelection==="Paper" && computerSelection==="Rock") ) {
             playScore++;
-            console.log ("computer score is " + compScore)
-            console.log ("player score is " + playScore)
             return "Win";
         }
     else if ((playerSelection==="Rock" && computerSelection==="Rock") ||
              (playerSelection==="Scissors" && computerSelection==="Scissors") ||
              (playerSelection==="Paper" && computerSelection==="Paper") ) {
-            console.log ("computer score is " + compScore)
-            console.log ("player score is " + playScore)
             return "Tie";
 
         }
@@ -74,8 +66,6 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection==="Paper" && computerSelection==="Scissors") ||
     (playerSelection==="Rock" && computerSelection==="Paper") ) {
         compScore++;
-        console.log ("computer score is " + compScore)
-        console.log ("player score is " + playScore)
         return "Lose"
   }
     else { return "There seems to be a problem. Try again."}
