@@ -6,13 +6,36 @@
     const rps=["Rock", "Paper", "Scissors"];
     return rps[getRandomInt()];
 }
-  //These are the variables for playerSelection and computerSelection
-  let playerSelection = prompt ("Rock, paper, or scissors?" ,)
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
+let playScore = 0;
+let compScore= 0;
+
+function game () {
+    
+    for (let i = 0; i < 5; ) {
+        
+        //These are the variables for player Selection and computer Selection
+        let playerSelection = prompt ("Rock, paper, or scissors?" ,);
+        let computerSelection = computerPlay();
+        
+        console.log (i)
+
+        playRound(playerSelection, computerSelection);
+        
+        console.log(playRound(playerSelection, computerSelection));
+        
+        i++
+
+        console.log (i)
+
+        console.log ("You chose " + playerSelection + ". The computer chose " + computerSelection + ". Your score is " + playScore + ". The computer score is " + compScore + "." )
+
+     }
+  }
+
 
 //This is the function to play a round of the game
 function playRound(playerSelection, computerSelection) {
+
     if (playerSelection=="rock"|| playerSelection=="Rock"|| playerSelection=="ROck"|| playerSelection=="ROCk"||playerSelection=="ROCK"||playerSelection=="RocK"|| playerSelection=="rocK"|| playerSelection=="roCK") {
         playerSelection="Rock";
     }
@@ -25,7 +48,8 @@ function playRound(playerSelection, computerSelection) {
     if ((playerSelection==="Rock" && computerSelection==="Scissors") ||
         (playerSelection==="Scissors" && computerSelection==="Paper") ||
         (playerSelection==="Paper" && computerSelection==="Rock") ) {
-            return "You win";
+            return playScore++;
+            return "Win";
         }
     else if ((playerSelection==="Rock" && computerSelection==="Rock") ||
              (playerSelection==="Scissors" && computerSelection==="Scissors") ||
@@ -35,17 +59,9 @@ function playRound(playerSelection, computerSelection) {
     else if ((playerSelection==="Scissors" && computerSelection==="Rock") ||
     (playerSelection==="Paper" && computerSelection==="Scissors") ||
     (playerSelection==="Rock" && computerSelection==="Paper") ) {
-         return "You lose"; 
+        compScore++
+        console.log (compScore)
+        return "Lose"
   }
     else { return "There seems to be a problem. Try again."}
 }
-
-
-  /*function game () {
-    for (let i = 0; i < 5; i++) {
-        let playScore = 0
-        let compScore= 0
-
-        playRound()
-     }
-  }*/
