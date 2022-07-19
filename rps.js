@@ -1,15 +1,13 @@
-function computerPlay () {
+//This is the function that allows the computer to randomly choose an option
+  function computerPlay () {
     function getRandomInt() {
         return Math.floor(Math.random() * 3);
       }
-    //console.log (getRandomInt())
-
     const rps=["Rock", "Paper", "Scissors"];
-
     return rps[getRandomInt()];
-
 }
 
+//This is the function to play a round of the game
 function playRound(playerSelection, computerSelection) {
     if (playerSelection=="rock"|| playerSelection=="Rock"|| playerSelection=="ROck"|| playerSelection=="ROCk"||playerSelection=="ROCK"||playerSelection=="RocK"|| playerSelection=="rocK"|| playerSelection=="roCK") {
         playerSelection="Rock";
@@ -33,6 +31,17 @@ function playRound(playerSelection, computerSelection) {
     else { return "You lose. Sorry!"; }
   }
    
+  //These are the variables for playerSelection and computerSelection
   const playerSelection = "rock";
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
+
+  /*function game () {
+    for (let i = 0; i < 5; i++) {
+        let playScore = 0
+        let compScore= 0
+
+        playRound()
+     }
+  }*/
+  
