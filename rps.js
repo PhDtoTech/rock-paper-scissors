@@ -6,6 +6,10 @@
     const rps=["Rock", "Paper", "Scissors"];
     return rps[getRandomInt()];
 }
+  //These are the variables for playerSelection and computerSelection
+  let playerSelection = prompt ("Rock, paper, or scissors?" ,)
+  const computerSelection = computerPlay();
+  console.log(playRound(playerSelection, computerSelection));
 
 //This is the function to play a round of the game
 function playRound(playerSelection, computerSelection) {
@@ -21,20 +25,21 @@ function playRound(playerSelection, computerSelection) {
     if ((playerSelection==="Rock" && computerSelection==="Scissors") ||
         (playerSelection==="Scissors" && computerSelection==="Paper") ||
         (playerSelection==="Paper" && computerSelection==="Rock") ) {
-            return "You win!";
+            return "You win";
         }
     else if ((playerSelection==="Rock" && computerSelection==="Rock") ||
              (playerSelection==="Scissors" && computerSelection==="Scissors") ||
              (playerSelection==="Paper" && computerSelection==="Paper") ) {
-            return "No one wins!";
+            return "Tie";
         }
-    else { return "You lose. Sorry!"; }
+    else if ((playerSelection==="Scissors" && computerSelection==="Rock") ||
+    (playerSelection==="Paper" && computerSelection==="Scissors") ||
+    (playerSelection==="Rock" && computerSelection==="Paper") ) {
+         return "You lose"; 
   }
-   
-  //These are the variables for playerSelection and computerSelection
-  const playerSelection = "rock";
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
+    else { return "There seems to be a problem. Try again."}
+}
+
 
   /*function game () {
     for (let i = 0; i < 5; i++) {
@@ -44,4 +49,3 @@ function playRound(playerSelection, computerSelection) {
         playRound()
      }
   }*/
-  
